@@ -26,7 +26,7 @@ class Words {
 
 
 //: ## Q2: Variable Types and Function Types
-    static func arePalindromes(_ words: [String]) -> Bool {
+    class func arePalindromes(_ words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reversed())}
         let numElements = words.count
         
@@ -42,7 +42,7 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: Prior to Swift 3, since **let** is an immutable variable, `0 ..< numElements` would be an invalid way to represent a range and thus this for-loop would have been correctly represented in C-style as `for var i = 0; i < numElements; i++`. However, in Swift 3, C-style for-loops are no longer supported so the above is correct. This function arePalindromes is of type Bool, but will have no return value if all `words[i] == reversedWords[i]`: intuitively, if the for-loop completes we should `return true`. Lastly, this function should be a static function since it is not called on an instance of the class.
+//: Prior to Swift 3, since **let** is an immutable variable, `0 ..< numElements` would be an invalid way to represent a range and thus this for-loop would have been correctly represented in C-style as `for var i = 0; i < numElements; i++`. However, in Swift 3, C-style for-loops are no longer supported so the above is correct. This function arePalindromes is of type Bool, but will have no return value if all `words[i] == reversedWords[i]`: intuitively, if the for-loop completes we should `return true`. Lastly, this function should be a class function since it is not called on an instance of the class.
 
 
 //: ## Q3: More Functions and Object Initialization
@@ -90,7 +90,7 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: `countLetters : [Character : Int]` is an incorrect instantiation of an empty array. `return nil` should be `return true` as this function is **Bool** type. This function should not be a `class func`, since it is called on instances of the class and uses their instance variables. `lenA` and `lenB` should both be `let` variables since they're unchanged throughout the function. Finally in line 79, `(letter, count)` should be changed to `(_, count)` if `letter` is unused in the loop.
+//: `countLetters : [Character : Int]` is an incorrect instantiation of an empty dictionary. `return nil` should be `return true` as this function is **Bool** type. This function should not be a `class func`, since it is called on instances of the class and uses their instance variables. `lenA` and `lenB` should both be `let` variables since they're unchanged throughout the function. Finally in line 79, `(letter, count)` should be changed to `(_, count)` if `letter` is unused in the loop.
     
     
 }
